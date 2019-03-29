@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap Css -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow|Ubuntu+Mono" rel="stylesheet">
+
+  <!-- Local CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <title>Programming Hub</title>
+</head>
+<body onload="adicionarConteudo()">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
+  <a class="navbar-brand nav-title" href="index.html">
+    Programming Hub
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse nav-items" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item nav-item-sep active">
+        <a class="nav-link home-button scale-on-hover" href="index.html">
+          <i class="fa fa-home icon-left"></i>
+          Ínicio <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item nav-item-sep">
+        <a class="nav-link new-post-button scale-on-hover" href="new_post.html">
+          <i class="fa fa-plus icon-left"></i>
+          Novo Post
+        </a>
+      </li>
+    </ul>
+    <ul class="navbar-nav justify-content-right">
+      <li class="nav-item nav-item-sep dropdown open dropdown-hover user-options">
+        <a class="nav-link dropdown-toggle user-button scale-on-hover" href="#" id="navbarDropdown" role="button"
+           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Usuário
+          <i class="fa fa-user icon-right"></i>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item login-button" href="login.html">
+            <i class="fa fa-sign-in-alt icon-left"></i>
+            Login
+          </a>
+          <a class="dropdown-item register-button" href="register.html">
+            <i class="fa fa-user-plus icon-left"></i>
+            Cadastro
+          </a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container content">
+  <div class="col-6 mx-auto shadow post-detail">
+    <div class="text-center">
+      <button class="btn btn-primary float-right">
+        Assunto:
+        <span class="badge badge-secondary">C</span>
+      </button>
+      <br><br>
+      <h1>
+        Programação em C
+      </h1>
+      <p class="text-muted">Aprenda a programar na linguagem C</p>
+    </div>
+    <hr>
+    <p id="postContent">
+      <!--  Texto mock de Lorem vai ser colocado aqui com JS -->
+    </p>
+    <blockquote class="blockquote mb-0">
+      <footer class="blockquote-footer">
+        <strong>Autor:</strong> João Victor
+      </footer>
+    </blockquote>
+  </div>
+</div>
+
+<!-- Comentários -->
+<div class="card comments-box col-4 mx-auto mb-4 shadow">
+  <div class="card-body">
+    <h3 class="card-title text-center">
+      Comentários
+      <span class="badge badge-primary">4</span>
+    </h3>
+    <hr>
+    <br>
+    <div class="card comment shadow bg-light">
+      <h5 class="card-header">José</h5>
+      <div class="card-body">
+        <p class="card-text">Ótimo Post!</p>
+      </div>
+      <div class="card-footer text-muted">
+        <div class="row">
+          <div class="col">
+            07/02/2019 - 19:41
+          </div>
+          <div class="col-md-auto"></div>
+          <div class="col col-lg-4">
+            <button class="btn btn-primary btn-sm">
+              Responder
+              <i class="fa fa-angle-right icon-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card comment shadow bg-light">
+      <h5 class="card-header">Maria</h5>
+      <div class="card-body">
+        <p class="card-text">Aprendi bastante lendo isso</p>
+      </div>
+      <div class="card-footer text-muted">
+        <div class="row">
+          <div class="col">
+            03/01/2019 - 18:12
+          </div>
+          <div class="col-md-auto"></div>
+          <div class="col col-lg-4">
+            <button class="btn btn-primary btn-sm">
+              Responder
+              <i class="fa fa-angle-right icon-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card comment shadow bg-light">
+      <h5 class="card-header">Ferdinando</h5>
+      <div class="card-body">
+        <p class="card-text">Poderia fazer um guia sobre Python?</p>
+      </div>
+      <div class="card-footer text-muted">
+        <div class="row">
+          <div class="col">
+            02/12/2018 - 12:14
+          </div>
+          <div class="col-md-auto"></div>
+          <div class="col col-lg-4">
+            <button class="btn btn-primary btn-sm">
+              Responder
+              <i class="fa fa-angle-right icon-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="card comment-answer shadow bg-light border-success">
+        <h5 class="card-header">João Victor</h5>
+        <div class="card-body">
+          <p class="card-text">Claro!</p>
+        </div>
+        <div class="card-footer text-muted">
+          <div class="row">
+            <div class="col">
+              04/12/2018 - 14:57
+            </div>
+            <div class="col-md-auto"></div>
+            <div class="col col-lg-5">
+              <button class="btn btn-primary btn-sm">
+                Responder
+                <i class="fa fa-angle-right icon-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-footer">
+    <div class="card">
+      <h5 class="card-header text-center">Novo Comentário</h5>
+      <div class="card-body">
+        <label for="commentInput">
+          <strong>Comentário:</strong>
+        </label>
+        <textarea name="commentContent" id="commentInput" cols="30" rows="10" class="form-control mb-2"></textarea>
+        <div class="text-center">
+          <button class="btn btn-success">
+            Enviar
+            <i class="fa fa-check icon-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+<!-- Função para adicionar texto mock no conteúdo do post -->
+<script src="post.js"></script>
+
+<script src="dropdown.js"></script>
+</body>
+</html>

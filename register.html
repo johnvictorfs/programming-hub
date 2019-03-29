@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap Css -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow|Ubuntu+Mono" rel="stylesheet">
+
+  <!-- Local CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <title>Programming Hub</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
+  <a class="navbar-brand nav-title" href="index.html">
+    Programming Hub
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse nav-items" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item nav-item-sep active">
+        <a class="nav-link home-button scale-on-hover" href="index.html">
+          <i class="fa fa-home icon-left"></i>
+          Ínicio <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item nav-item-sep">
+        <a class="nav-link new-post-button scale-on-hover" href="new_post.html">
+          <i class="fa fa-plus icon-left"></i>
+          Novo Post
+        </a>
+      </li>
+    </ul>
+    <ul class="navbar-nav justify-content-right">
+      <li class="nav-item nav-item-sep dropdown open dropdown-hover user-options">
+        <a class="nav-link dropdown-toggle user-button scale-on-hover" href="#" id="navbarDropdown" role="button"
+           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Usuário
+          <i class="fa fa-user icon-right"></i>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item login-button" href="login.html">
+            <i class="fa fa-sign-in-alt icon-left"></i>
+            Login
+          </a>
+          <a class="dropdown-item register-button" href="register.html">
+            <i class="fa fa-user-plus icon-left"></i>
+            Cadastro
+          </a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Conteudo de pagina  -->
+<div class="container content">
+  <div class="col-5 card shadow bg-light mx-auto">
+    <div class="card-body ml-2 mr-2">
+      <h2 class="card-title text-center">Nova Conta</h2>
+      <hr>
+      <form action="register_submit" method="get" accept-charset="utf-8" id="registerForm">
+        <div class="form-group">
+          <label for="usernameInput">
+            <strong>Usuário:</strong>
+          </label>
+          <input type="text" name="username" id="usernameInput" class="form-control" placeholder="Usuário">
+        </div>
+        <div class="form-group">
+          <label for="passwordInput">
+            <strong>Senha:</strong>
+          </label>
+          <input type="password" name="password" id="passwordInput" class="form-control" placeholder="Senha">
+        </div>
+        <div class="form-group">
+          <label for="passwordInput2">
+            <strong>Confirmar Senha:</strong>
+          </label>
+          <input type="password" name="password2" id="passwordInput2" class="form-control"
+                 placeholder="Confirmar Senha">
+        </div>
+        <br>
+        <div class="text-center">
+          <button type="button" class="btn btn-success btn-login" onclick="enviarCadastro()">
+            Criar Conta
+            <i class="fa fa-plus icon-right"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- Fim Conteudo de pagina  -->
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+<!-- Funções para cadastro de Conta -->
+<script src="register.js"></script>
+
+<script src="dropdown.js"></script>
+</body>
+</html>
