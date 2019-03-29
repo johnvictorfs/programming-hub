@@ -73,7 +73,7 @@
     <div class="card-body ml-2 mr-2">
       <h2 class="card-title text-center">Novo Post</h2>
       <hr>
-      <form action="post_submit" method="get" accept-charset="utf-8">
+      <form action="post_submit" method="get" accept-charset="utf-8" id="newPostForm">
         <div class="form-group">
           <label for="titleInput">
             <strong>Título:</strong>
@@ -91,7 +91,7 @@
             <strong>Categoria</strong>
           </label>
           <select name="categoria" id="categoriaInput" class="form-control">
-            <option selected>Escolha Categoria</option>
+            <option selected>Escolha Categoria...</option>
             <option value="python">Python</option>
             <option value="nodejs">Node.JS</option>
             <option value="cpp">C++</option>
@@ -108,7 +108,7 @@
         </div>
         <br>
         <div class="text-center">
-          <button type="submit" class="btn btn-success btn-login">
+          <button type="button" class="btn btn-success btn-login" onclick="enviarPost()">
             Novo Post
             <i class="fa fa-plus icon-right"></i>
           </button>
@@ -128,6 +128,9 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+
+<!-- Funções para enviar Novo Post -->
+<script src="new_post.js"></script>
 
 <script src="dropdown.js"></script>
 </body>

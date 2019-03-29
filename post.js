@@ -1,3 +1,5 @@
+'use strict';
+
 function adicionarConteudo() {
   /**
    * Adiciona conteúdo mock dentro do corpo do post

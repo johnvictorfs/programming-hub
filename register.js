@@ -1,3 +1,5 @@
+'use strict';
+
 function enviarCadastro() {
   /**
    * Dá submit na form do cadastro caso ela esteja válida.
