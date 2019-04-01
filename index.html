@@ -71,6 +71,51 @@
   <div class="row">
     <div class="col-2"></div>
     <div class="col-3">
+      <div class="card mx-auto mb-4">
+        <div class="card-header text-center">Filtrar Posts por Categoria</div>
+        <div class="card-body">
+          <form action="index.html" method="get" accept-charset="utf-8" id="filterCategoryForm">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="filterCategory" id="category_none" value="none"
+                     checked>
+              <label class="form-check-label" for="category_none">
+                Nenhuma
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="filterCategory" id="category_c" value="c">
+              <label class="form-check-label" for="category_c">
+                C
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="filterCategory" id="category_python" value="python">
+              <label class="form-check-label" for="category_python">
+                Python
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="filterCategory" id="category_cpp" value="cpp">
+              <label class="form-check-label" for="category_cpp">
+                C++
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="filterCategory" id="category_node" value="node">
+              <label class="form-check-label" for="category_node">
+                Node.js
+              </label>
+            </div>
+            <hr>
+            <div class="text-center mt-3">
+              <button type="submit" class="btn btn-primary text-white">
+                Filtrar
+                <i class="fa fa-filter icon-right"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
       <div class="mx-auto w-50 text-center alert alert-dark shadow posts-label" role="alert">
         Posts
       </div>
@@ -89,7 +134,7 @@
         </a>
       </div>
     </div>
-    <div class="col-5 card shadow bg-light post-preview scale-on-hover">
+    <div class="col-5 card shadow bg-light post-preview scale-on-hover ml-5">
       <img src="http://bendaghir.com/public/img/coding/c.png" alt="c-language" class="card-img mt-3">
       <h2 class="card-title text-center mt-3">Programação em C</h2>
       <div class="card-body">
