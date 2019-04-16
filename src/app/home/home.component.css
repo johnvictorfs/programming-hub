@@ -1,0 +1,120 @@
+body {
+    font-family: "PT Sans Narrow", "Assistant", sans-serif;
+  }
+  
+  .content {
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+  
+  .icon-left {
+    margin-right: 7px;
+  }
+  
+  .icon-right {
+    margin-left: 7px;
+  }
+  
+  .nav-title {
+    font-family: "Ubuntu Mono", "PT Sans Narrow", "Assistant", sans-serif;
+    font-size: 25px;
+  }
+  
+  .nav-items {
+    margin-left: 20px;
+  }
+  
+  .nav-item-sep {
+    margin-right: 15px;
+    font-size: 15px;
+    border-style: solid;
+    border-radius: 15px;
+    border-color: lightslategray;
+    border-bottom: 5px solid lightskyblue;
+  }
+  
+  .scale-on-hover:hover {
+    transition: all 0.3s ease-in-out;
+    transform: scale(1.05);
+  }
+  
+  .new-post-button:hover {
+    color: lightgreen !important;
+  }
+  
+  .home-button:hover {
+    color: lightskyblue !important;
+  }
+  
+  .user-button {
+    text-align: center;
+  }
+  
+  .user-button:hover {
+    color: yellow !important;
+  }
+  
+  .user-options {
+    padding-right: 20px;
+    padding-left: 15px;
+  }
+  
+  .login-button:hover {
+    transition: all 0.3s ease-in-out;
+    color: green;
+  }
+  
+  .register-button:hover {
+    transition: all 0.3s ease-in-out;
+    color: lightskyblue;
+  }
+  
+  .post-preview {
+    max-width: 600px;
+  }
+  
+  .posts-label {
+    margin-bottom: 0;
+    font-size: 20px;
+  }
+  
+  .post-title {
+    font-size: 30px;
+  }
+  
+  .post-detail {
+    border-style: solid;
+    border-radius: 10px;
+    padding: 10px;
+    border-width: 1px;
+  }
+  
+  .comment {
+    margin-bottom: 20px;
+  }
+  
+  .comment-answer {
+    margin: 10px 10px 10px 40px;
+  }
+  
+  /*
+  Fade on dropdown menu
+  https://stackoverflow.com/a/15509447/10416161
+  */
+  .open > .dropdown-menu {
+    animation-name: slidenavAnimation;
+    animation-duration: .4s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes slidenavAnimation {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
