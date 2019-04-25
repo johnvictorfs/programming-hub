@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
-  <a class="navbar-brand nav-title" href="index.html">
+  <a class="navbar-brand nav-title" [routerLink]="['/']" routerLinkActive="router-link-active">
     Programming Hub
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -9,16 +9,16 @@
 
   <div class="collapse navbar-collapse nav-items" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li *ngFor="let item of leftItems" class="nav-item nav-item-sep">
-        <a [routerLink]="item.path" routerLinkActive="router-link-active" class="nav-link">
+      <li *ngFor="let item of leftItems" class="nav-item ml-2">
+        <a [routerLink]="[item.path]" routerLinkActive="router-link-active" class="btn btn-sm btn-primary nav-btn nav-link" [ngClass]="item.type">
           <i [class]="item.icon"></i>
           {{ item.text }}
         </a>
       </li>
     </ul>
     <ul class="navbar-nav justify-content-right">
-      <li *ngFor="let item of rightItems" class="nav-item nav-item-sep">
-        <a [routerLink]="item.path" routerLinkActive="router-link-active" class="nav-link">
+      <li *ngFor="let item of rightItems" class="nav-item ml-2">
+        <a [routerLink]="[item.path]" routerLinkActive="router-link-active" class="btn btn-sm btn-primary nav-btn nav-link" [ngClass]="item.type">
           <i [class]="item.icon"></i>
           {{ item.text }}
         </a>

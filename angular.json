@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "exercicio-angular": {
+    "programming-hub": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/exercicio-angular",
+            "outputPath": "dist/programming-hub",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -58,18 +58,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "exercicio-angular:build"
+            "browserTarget": "programming-hub:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "exercicio-angular:build:production"
+              "browserTarget": "programming-hub:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "exercicio-angular:build"
+            "browserTarget": "programming-hub:build"
           }
         },
         "test": {
@@ -103,7 +103,7 @@
         }
       }
     },
-    "exercicio-angular-e2e": {
+    "programming-hub-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -112,11 +112,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "exercicio-angular:serve"
+            "devServerTarget": "programming-hub:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "exercicio-angular:serve:production"
+              "devServerTarget": "programming-hub:serve:production"
             }
           }
         },
@@ -132,5 +132,5 @@
       }
     }
   },
-  "defaultProject": "exercicio-angular"
+  "defaultProject": "programming-hub"
 }

@@ -3,24 +3,24 @@
     <div class="card-body ml-2 mr-2">
       <h2 class="card-title text-center">Novo Post</h2>
       <hr>
-      <form action="new_post" method="get" accept-charset="utf-8" id="newPostForm">
+      <form method="post" accept-charset="utf-8" id="newPostForm">
         <div class="form-group">
           <label for="titleInput">
             <strong>Título:</strong>
           </label>
-          <input type="text" name="title" id="titleInput" class="form-control" placeholder="Título">
+          <input type="text" name="title" id="titleInput" class="form-control" placeholder="Título" [ngModel]="postDetails.title">
         </div>
         <div class="form-group">
           <label for="descricaoInput">
             <strong>Descrição:</strong>
           </label>
-          <input type="text" name="descricao" id="descricaoInput" class="form-control" placeholder="Descrição">
+          <input type="text" name="descricao" id="descricaoInput" class="form-control" placeholder="Descrição" [ngModel]="postDetails.description">
         </div>
         <div class="form-group">
           <label for="categoriaInput">
             <strong>Categoria</strong>
           </label>
-          <select name="categoria" id="categoriaInput" class="form-control">
+          <select name="categoria" id="categoriaInput" class="form-control" [ngModel]="postDetails.category">
             <option selected>Escolha Categoria...</option>
             <option value="python">Python</option>
             <option value="nodejs">Node.JS</option>
@@ -34,11 +34,11 @@
             <strong>Conteúdo:</strong>
           </label>
           <textarea name="conteudo" id="conteudoInput" cols="30" rows="10" class="form-control"
-            placeholder="Conteúdo do Post"></textarea>
+            placeholder="Conteúdo do Post" [ngModel]="postDetails.content"></textarea>
         </div>
         <br>
         <div class="text-center">
-          <button type="button" class="btn btn-success btn-login" (click)="enviarPost">
+          <button type="button" class="btn btn-success btn-login" (click)="enviarPost()">
             Novo Post
             <i class="fa fa-plus icon-right"></i>
           </button>

@@ -1,15 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
+
+import {Credential} from './model/credential.model';
 
 @Component({
   selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  templateUrl: './register.component.html'
 })
-export class RegisterComponent implements OnInit {
 
-  constructor() { }
+export class RegisterComponent {
+  credentials: Credential = {
+    username: '',
+    password: '',
+    password2: ''
+  };
 
-  ngOnInit() {
+  submitRegister(): void {
+    if (this.credentials.password !== this.credentials.password2) {
+      alert('As senhas não são iguais.');
+      return;
+    }
+
+    alert(`Tried to register with: ${this.credentials.username} - ${this.credentials.password} - ${this.credentials.password2}}`);
   }
 
 }

@@ -38,7 +38,7 @@
     </div>
   </div>
   <div class="col-5 card shadow bg-light post-preview scale-on-hover ml-5">
-    <img src="{{activePost.img_src}}" alt="c-language" class="card-img mt-3">
+    <img [src]="activePost.img_src" alt="c-language" class="card-img mt-3">
     <h2 class="card-title text-center mt-3">{{activePost.title}}</h2>
     <div class="card-body">
       <div class="card-text">{{activePost.text}}

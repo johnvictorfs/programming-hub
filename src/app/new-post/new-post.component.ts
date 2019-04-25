@@ -1,12 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
+
+import {PostDetail} from './model/post_detail.model';
 
 @Component({
   selector: 'app-new-post',
-  templateUrl: './new-post.component.html',
-  styleUrls: ['./new-post.component.css']
+  templateUrl: './new-post.component.html'
 })
+
 export class NewPostComponent {
-  enviarPost() { 
-    // Enviar novo post aqui 
+  postDetails: PostDetail = {
+    authorId: 0,
+    title: '',
+    content: '',
+    description: '',
+    category: ''
+  };
+
+  enviarPost() {
+    // Enviar novo post aqui
   }
 }

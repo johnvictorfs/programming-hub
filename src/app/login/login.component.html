@@ -3,28 +3,29 @@
     <div class="card-body ml-2 mr-2">
       <h2 class="card-title text-center">Login</h2>
       <hr>
-      <form action="login.html" method="get" accept-charset="utf-8">
+      <form method="post" accept-charset="utf-8" id="loginForm">
         <div class="form-group">
           <label for="usernameInput">
             <strong>Usuário:</strong>
           </label>
-          <input type="text" name="username" id="usernameInput" class="form-control" placeholder="Usuário">
+          <input type="text" name="username" id="usernameInput" class="form-control" placeholder="Usuário" [(ngModel)]="credentials.username">
         </div>
         <div class="form-group">
           <label for="passwordInput">
             <strong>Senha:</strong>
           </label>
-          <input type="password" name="password" id="passwordInput" class="form-control" placeholder="Senha">
+          <input type="password" name="password" id="passwordInput" class="form-control" placeholder="Senha" [(ngModel)]="credentials.password">
         </div>
         <div class="form-group ml-4">
-          <input type="checkbox" name="keepLogged" class="form-check-input" id="keepLoggedInput">
+          <input type="checkbox" name="keepLogged" class="form-check-input" id="keepLoggedInput" 
+          [(ngModel)]="credentials.keepLogged">
           <label class="form-check-label" for="keepLoggedInput">Mantenha-me Conectado</label>
         </div>
         <br>
         <div class="text-center">
-          <button type="submit" class="btn btn-success btn-login">
+          <button class="btn btn-success btn-login" (click)="submitLogin()">
             Entrar
-            <i class="fa fa-check icon-right"></i>
+            <i class="fa fa-check icon-right ml-2"></i>
           </button>
         </div>
       </form>

@@ -3,29 +3,31 @@
     <div class="card-body ml-2 mr-2">
       <h2 class="card-title text-center">Nova Conta</h2>
       <hr>
-      <form action="register.html" method="get" accept-charset="utf-8" id="registerForm">
+      <form method="post" accept-charset="utf-8" id="registerForm">
         <div class="form-group">
           <label for="usernameInput">
             <strong>Usuário:</strong>
           </label>
-          <input type="text" name="username" id="usernameInput" class="form-control" placeholder="Usuário">
+          <input type="text" name="username" id="usernameInput" class="form-control" placeholder="Usuário"
+                 [(ngModel)]="credentials.username">
         </div>
         <div class="form-group">
           <label for="passwordInput">
             <strong>Senha:</strong>
           </label>
-          <input type="password" name="password" id="passwordInput" class="form-control" placeholder="Senha">
+          <input type="password" name="password" id="passwordInput" class="form-control" placeholder="Senha"
+                 [(ngModel)]="credentials.password">
         </div>
         <div class="form-group">
           <label for="passwordInput2">
             <strong>Confirmar Senha:</strong>
           </label>
           <input type="password" name="password2" id="passwordInput2" class="form-control"
-            placeholder="Confirmar Senha">
+                 placeholder="Confirmar Senha" [(ngModel)]="credentials.password2">
         </div>
         <br>
         <div class="text-center">
-          <button type="button" class="btn btn-success btn-login" onclick="enviarCadastro()">
+          <button type="button" class="btn btn-success btn-login" (click)="submitRegister()">
             Criar Conta
             <i class="fa fa-plus icon-right"></i>
           </button>
