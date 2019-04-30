@@ -1,13 +1,16 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
-  <a class="navbar-brand nav-title" [routerLink]="['/']" routerLinkActive="router-link-active">
+  <a class="navbar-brand nav-title home-title" [routerLink]="['/']" routerLinkActive="router-link-active">
     Programming Hub
   </a>
+
+  <!-- Toggle Mobile Nav -->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse nav-items" id="navbarSupportedContent">
+    <!-- Left Navbar Buttons -->
     <ul class="navbar-nav mr-auto">
       <li *ngFor="let item of leftItems" class="nav-item ml-2">
         <a [routerLink]="[item.path]" routerLinkActive="router-link-active" class="btn btn-sm btn-primary nav-btn nav-link" [ngClass]="item.type">
@@ -16,6 +19,7 @@
         </a>
       </li>
     </ul>
+    <!-- Right Navbar Buttons -->
     <ul class="navbar-nav justify-content-right">
       <li *ngFor="let item of rightItems" class="nav-item ml-2">
         <a [routerLink]="[item.path]" routerLinkActive="router-link-active" class="btn btn-sm btn-primary nav-btn nav-link" [ngClass]="item.type">

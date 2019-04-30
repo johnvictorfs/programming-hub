@@ -1,0 +1,11 @@
+<div class="card shadow">
+  <div class="card-header">
+    <h3>Novo Comentário</h3>
+  </div>
+  <div class="card-content m-3">
+    <textarea cols="10" rows="10" [(ngModel)]="commentBody" class="form-control"></textarea>
+  </div>
+  <div class="text-center mb-3">
+    <button class="btn btn-success" (click)="sendComment()">Enviar</button>
+  </div>
+</div>

@@ -21,4 +21,10 @@
       </footer>
     </blockquote>
   </div>
+  <div class="col-6 mx-auto mt-3" *ngFor="let comment of comments">
+    <app-comment></app-comment>
+  </div>
+  <div class="col-8 mx-auto mt-4">
+    <app-new-comment></app-new-comment>
+  </div>
 </div>

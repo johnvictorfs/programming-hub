@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
-import {Credential} from './model/credential.model';
+import { Credential } from './model/credential.model';
 
 @Component({
   selector: 'app-login',
@@ -8,6 +9,8 @@ import {Credential} from './model/credential.model';
 })
 
 export class LoginComponent {
+  constructor(private route: ActivatedRoute, private router: Router) { }
+
   credentials: Credential = {
     username: '',
     password: '',
@@ -16,7 +19,10 @@ export class LoginComponent {
 
   submitLogin(): void {
     const loggedStr = this.credentials.keepLogged ? 'true' : 'false';
-
-    alert(`Tried to login with ${this.credentials.username} - ${this.credentials.password} - ${loggedStr}`);
+    if (this.credentials.username == '' || this.credentials.password == '') {
+      return alert('Você não pode deixar campos em branco.');
+    }
+    alert(`Tried to slogin with ${this.credentials.username} - ${this.credentials.password} - ${loggedStr}`);
+    this.router.navigate(['/']);
   }
 }

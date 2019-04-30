@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import PostDetail from './PostDetail'
+import Comment from '../comment/model/comment.model'
 
 @Component({
   selector: 'app-post-detail',
@@ -17,6 +18,11 @@ export class PostDetailComponent implements OnInit {
     content: 'bla bla bla',
     author: 'João Victor'
   }
+
+  comments: Array<Comment> = [
+    { author: 'john', authorId: 1, content: 'blah' },
+    { author: 'maria', authorId: 2, content: 'thing' }
+  ]
 
   constructor(private route: ActivatedRoute) { }
 

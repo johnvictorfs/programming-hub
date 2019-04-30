@@ -11,6 +11,7 @@ import {ActivePost} from './model/active_post.model';
 })
 
 export class HomeComponent {
+  filterSelection: string;
 
   categories: Array<Category> = [
     {name: 'C', id: 'category_c', value: 'c'},
@@ -35,4 +36,8 @@ export class HomeComponent {
     author: 'João Victor',
     path: ['/post-detail', 2]
   };
+
+  filtrarPosts(): void {
+    // Filtrar Posts aqui
+  }
 }

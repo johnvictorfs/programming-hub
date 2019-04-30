@@ -1,4 +1,14 @@
+.home-title {
+    outline: none;
+}
+
+.home-title:active {
+    color: lightblue;
+}
+
 .nav-btn {
     color: white !important;
     border-radius: 8px;
+    padding-bottom: 4px;
+    padding-top: 4px;
 }
