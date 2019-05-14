@@ -1,0 +1,107 @@
+<div class="container">
+  <div class="col-8 card shadow bg-light mx-auto">
+    <div
+      class="alert alert-success mt-2 alert-dismissible fade show"
+      *ngIf="success"
+    >
+      Post Criado com Sucesso!
+      <button
+        type="button"
+        class="close"
+        (click)="success = false"
+        aria-label="Close"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div
+      class="alert alert-danger mt-2 alert-dismissible fade show"
+      *ngIf="error"
+    >
+      Houve um erro ao tentar enviar esse Post
+      <button
+        type="button"
+        class="close"
+        (click)="error = false"
+        aria-label="Close"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="card-body ml-2 mr-2">
+      <h2 class="card-title text-center">Novo Post</h2>
+      <hr />
+      <form method="post" accept-charset="utf-8" id="newPostForm">
+        <div class="form-group">
+          <label for="titleInput">
+            <strong>Título:</strong>
+          </label>
+          <input
+            type="text"
+            name="title"
+            id="titleInput"
+            class="form-control"
+            placeholder="Título"
+            [(ngModel)]="postDetails.title"
+          />
+        </div>
+        <div class="form-group">
+          <label for="descricaoInput">
+            <strong>Descrição:</strong>
+          </label>
+          <input
+            type="text"
+            name="descricao"
+            id="descricaoInput"
+            class="form-control"
+            placeholder="Descrição"
+            [(ngModel)]="postDetails.description"
+          />
+        </div>
+        <div class="form-group">
+          <label for="categoriaInput">
+            <strong>Categoria</strong>
+          </label>
+          <select
+            name="categoria"
+            id="categoriaInput"
+            class="form-control"
+            [(ngModel)]="postDetails.category"
+          >
+            <option selected>Escolha Categoria...</option>
+            <option value="python">Python</option>
+            <option value="nodejs">Node.JS</option>
+            <option value="cpp">C++</option>
+            <option value="c">C</option>
+            <option value="outros">Outros</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="conteudoInput">
+            <strong>Conteúdo:</strong>
+          </label>
+          <textarea
+            name="conteudo"
+            id="conteudoInput"
+            cols="30"
+            rows="10"
+            class="form-control"
+            placeholder="Conteúdo do Post"
+            [(ngModel)]="postDetails.content"
+          ></textarea>
+        </div>
+        <br />
+        <div class="text-center">
+          <button
+            type="button"
+            class="btn btn-success btn-login"
+            (click)="enviarPost()"
+          >
+            Novo Post
+            <i class="fa fa-plus icon-right"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

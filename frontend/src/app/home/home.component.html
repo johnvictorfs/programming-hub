@@ -1,0 +1,87 @@
+<div class="row">
+  <div class="col-2"></div>
+  <div class="col-3">
+    <div class="card mx-auto mb-4 shadow">
+      <div class="card-header text-center">Filtrar Posts por Categoria</div>
+      <div class="card-body">
+        <form accept-charset="utf-8" id="filterCategoryForm">
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="filterCategory"
+              id="category_none"
+              value="none"
+              checked
+            />
+            <label class="form-check-label" for="category_none">
+              Nenhuma
+            </label>
+          </div>
+          <div *ngFor="let category of categories" class="form-check">
+            <input
+              type="radio"
+              class="form-check-input"
+              [id]="category.id"
+              [value]="category.value"
+            />
+            <label class="form-check-label" [for]="category.id">
+              {{ category.name }}
+            </label>
+          </div>
+          <hr />
+          <div class="text-center mt-3">
+            <button
+              type="submit"
+              class="btn btn-primary text-white"
+              (click)="filtrarPosts()"
+            >
+              Filtrar
+              <i class="fa fa-filter icon-right"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div
+      class="mx-auto w-50 text-center alert alert-dark shadow posts-label mb-0 pb-1 pt-1"
+      role="alert"
+    >
+      Posts
+    </div>
+    <div class="list-group shadow">
+      <a
+        *ngFor="let post of posts"
+        (click)="handleClick(post)"
+        class="list-group-item list-group-item-action"
+        [ngClass]="{ active: post.active, 'text-white': post.active }"
+      >
+        {{ post.name }}
+      </a>
+    </div>
+  </div>
+  <div class="col-5 card shadow bg-light post-preview scale-on-hover ml-5">
+    <!-- <img [src]="activePost.img_src" alt="c-language" class="card-img mt-3" /> -->
+    <h2 class="card-title text-center mt-3">{{ activePost.title }}</h2>
+    <div class="card-body">
+      <div class="card-text">{{ activePost.description }}</div>
+      <hr />
+      <div class="mx-auto text-center">
+        <a
+          [routerLink]="'post-detail/' + activePost.id"
+          routerLinkActive="router-link-active"
+          class="btn btn-outline-success"
+        >
+          Ler Mais
+          <i class="fa fa-book-open icon-right"></i>
+        </a>
+      </div>
+    </div>
+    <div class="card-footer bg-transparent">
+      <p>
+        <small class="text-muted">Autor:</small>
+        {{ activePost.author }}
+      </p>
+    </div>
+  </div>
+</div>
