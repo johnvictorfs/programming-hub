@@ -26,13 +26,19 @@ export class PostDetailComponent implements OnInit {
     try {
       const { id } = this.route.snapshot.params;
       const { data } = await api.get(`/posts/${id}`);
-      this.post = data;
+      if (data) {
+        this.post = data;
+      } else {
+        this.error = true;
+      }
     } catch (error) {
       this.error = true;
       return;
     } finally {
-      const user = await api.get(`/users/${this.post.authorId}`);
-      this.post.author = user.data.username;
+      const { data } = await api.get(`/users/${this.post.authorId}`);
+      if (data) {
+        this.post.author = data.username;
+      }
     }
   }
 }

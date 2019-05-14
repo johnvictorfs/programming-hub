@@ -12,6 +12,7 @@ import api from "../../api";
 })
 export class HomeComponent implements OnInit {
   filterSelection: string;
+  noPosts: boolean;
 
   categories: Array<Category> = [
     { name: "C", id: "category_c", value: "c" },
@@ -31,12 +32,22 @@ export class HomeComponent implements OnInit {
   async ngOnInit() {
     try {
       const { data } = await api.get("/posts");
+      console.log(data);
+      if (!data.length) {
+        this.noPosts = true;
+        return;
+      }
       this.activePost = data[0];
-      for (let i = 0; i < 5; ++i) {
-        this.posts.push({ name: data[i].title, active: false, id: data[i].id });
+      // Pegar os primeiros 5 posts (ou todos se tiver menos de 5)
+      // e armazenar em 'posts' para visualizar na aba de "Posts"
+      for (let i = 0; i < Math.min(data.length, 5); ++i) {
+        if (data[i]) {
+          this.posts.push({ name: data[i].title, active: false, id: data[i].id });
+        }
       }
       this.posts[0].active = true;
     } catch (error) {
+      this.noPosts = true;
       console.error(error);
     }
   }

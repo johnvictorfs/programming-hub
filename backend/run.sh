@@ -1,1 +1,0 @@
-dotnet watch run --urls=http://localhost:5000,http://localhost:5001

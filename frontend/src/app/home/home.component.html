@@ -49,7 +49,10 @@
     >
       Posts
     </div>
-    <div class="list-group shadow">
+    <div *ngIf="noPosts" class="alert alert-danger text-center">
+      Nenhum Post encontrado
+    </div>
+    <div *ngIf="!noPosts" class="list-group shadow">
       <a
         *ngFor="let post of posts"
         (click)="handleClick(post)"
@@ -60,7 +63,14 @@
       </a>
     </div>
   </div>
-  <div class="col-5 card shadow bg-light post-preview scale-on-hover ml-5">
+  <div *ngIf="noPosts" class="col-5 card shadow bg-light post-preview scale-on-hover ml-5">
+    <div class="card-body" style="align-items: center;">
+      <div class="scale-on-hover alert alert-danger">
+        Post não encontrado
+      </div>
+    </div>
+  </div>
+  <div *ngIf="activePost" class="col-5 card shadow bg-light post-preview scale-on-hover ml-5">
     <!-- <img [src]="activePost.img_src" alt="c-language" class="card-img mt-3" /> -->
     <h2 class="card-title text-center mt-3">{{ activePost.title }}</h2>
     <div class="card-body">

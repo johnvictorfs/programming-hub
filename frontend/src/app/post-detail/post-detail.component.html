@@ -1,30 +1,36 @@
 <div class="container">
-  <div class="col-8 mx-auto shadow post-detail">
-    <div class="text-center">
-      <button class="btn btn-primary float-right" disabled>
-        Assunto:
-        <span class="badge badge-secondary">{{ post.category }}</span>
-      </button>
-      <br><br>
-      <h1>
-        {{ post.title }}
-      </h1>
-      <p class="text-muted">{{ post.description }}</p>
+    <div *ngIf="error" class="alert alert-danger text-center">
+      Post com ID {{ route.snapshot.params.id }} não encontrado
     </div>
-    <hr>
-    <p id="postContent">
-      {{ post.content }}
-    </p>
-    <blockquote class="blockquote mb-0">
-      <footer class="blockquote-footer">
-        <strong>Autor:</strong> {{ post.author }}
-      </footer>
-    </blockquote>
+  <div *ngIf="!error">
+    <div class="col-8 mx-auto shadow post-detail">
+      <div class="text-center">
+        <button class="btn btn-primary float-right" disabled>
+          Assunto:
+          <span class="badge badge-secondary">{{ post.category }}</span>
+        </button>
+        <br><br>
+        <h1>
+          {{ post.title }}
+        </h1>
+        <p class="text-muted">{{ post.description }}</p>
+      </div>
+      <hr>
+      <p id="postContent">
+        {{ post.content }}
+      </p>
+      <blockquote class="blockquote mb-0">
+        <footer class="blockquote-footer">
+          <strong>Autor:</strong> {{ post.author }}
+        </footer>
+      </blockquote>
+    </div>
+    <div class="col-6 mx-auto mt-3" *ngFor="let comment of comments">
+      <app-comment></app-comment>
+    </div>
+    <div class="col-8 mx-auto mt-4">
+      <app-new-comment></app-new-comment>
+    </div>
   </div>
-  <div class="col-6 mx-auto mt-3" *ngFor="let comment of comments">
-    <app-comment></app-comment>
-  </div>
-  <div class="col-8 mx-auto mt-4">
-    <app-new-comment></app-new-comment>
-  </div>
+
 </div>

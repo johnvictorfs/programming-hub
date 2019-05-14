@@ -1,13 +1,14 @@
-﻿// Unused usings removed
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.AzureADB2C.UI;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using ProgrammingHubApi.Models;
+using Microsoft.EntityFrameworkCore;
+using backend.Models;
 
-namespace ProgrammingHubApi
+namespace backend
 {
     public class Startup
     {
@@ -18,17 +19,16 @@ namespace ProgrammingHubApi
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the 
-        //container.
+        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<BlogPostContext>(opt => opt.UseInMemoryDatabase("BlogPostList"));
+            services.AddDbContext<PostContext>(opt => opt.UseInMemoryDatabase("posts"));
+            services.AddAuthentication(AzureADB2CDefaults.BearerAuthenticationScheme)
+                .AddAzureADB2CBearer(options => Configuration.Bind("AzureAdB2C", options));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            services.AddCors(c => { c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin()); });
         }
-
-        // This method gets called by the runtime. Use this method to configure the HTTP 
-        //request pipeline.
+cntent:cauaasdautaaaa: ContentResult: DbContext:o : ::::::: stringsadasfkmwegijwiqgmjqewgjnewjg3jen3hg34yj4hij : string
+        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
@@ -37,12 +37,12 @@ namespace ProgrammingHubApi
             }
             else
             {
-                // The default HSTS value is 30 days. You may want to change this for 
-                // production scenarios, see https://aka.ms/aspnetcore-hsts.
+                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-            app.UseCors(builder => builder.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin().AllowCredentials());
-            // app.UseHttpsRedirection();
+
+            app.UseHttpsRedirection();
+            app.UseAuthentication();
             app.UseMvc();
         }
     }
