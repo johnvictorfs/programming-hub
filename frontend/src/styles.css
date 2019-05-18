@@ -1,7 +1,15 @@
-a {
-    outline: none;
+@import "~ngx-toastr/toastr";
+
+/*
+https://stackoverflow.com/a/53989699
+*/
+#toast-container > div {
+  opacity: 1 !important;
 }
-  
+a {
+  outline: none;
+}
+
 a:active {
-    color: lightskyblue;
+  color: lightskyblue;
 }

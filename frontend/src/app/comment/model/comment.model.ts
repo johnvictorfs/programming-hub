@@ -1,5 +1,7 @@
 export default interface Comment {
-    author: string,
-    authorId: number,
-    content: string
+  id: number;
+  authorName: string;
+  authorId: number;
+  postId: number;
+  content: string;
 }

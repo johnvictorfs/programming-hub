@@ -16,11 +16,11 @@ export class RegisterComponent {
 
   submitRegister(): void {
     if (this.credentials.password !== this.credentials.password2) {
-      alert('As senhas não são iguais.');
+      alert('As senhas precisam ser iguais.');
       return;
     }
 
-    alert(`Tried to register with: ${this.credentials.username} - ${this.credentials.password} - ${this.credentials.password2}}`);
+    alert(`Cadastro: ${this.credentials.username} - ${this.credentials.password}`);
   }
 
 }

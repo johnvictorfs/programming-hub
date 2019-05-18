@@ -1,10 +1,10 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "/home/john/Projects/bootstrap-blog/backend/backend.csproj",
+    "projectUniqueName": "/home/john/WebstormProjects/programming-hub/backend/backend.csproj",
     "projectName": "backend",
-    "projectPath": "/home/john/Projects/bootstrap-blog/backend/backend.csproj",
-    "outputPath": "/home/john/Projects/bootstrap-blog/backend/obj/",
+    "projectPath": "/home/john/WebstormProjects/programming-hub/backend/backend.csproj",
+    "outputPath": "/home/john/WebstormProjects/programming-hub/backend/obj/",
     "projectStyle": "PackageReference",
     "fallbackFolders": [
       "/usr/share/dotnet/sdk/NuGetFallbackFolder"

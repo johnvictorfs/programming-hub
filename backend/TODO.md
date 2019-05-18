@@ -4,6 +4,7 @@
     ```c#
     Id: long
     AuthorId: long
+    AuthorName: string
     PostId: long
     Content: string
     ```

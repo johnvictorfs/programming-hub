@@ -1,8 +1,9 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using backend.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+
+using backend.Models;
 
 namespace backend.Controllers
 {
@@ -10,9 +11,9 @@ namespace backend.Controllers
     [ApiController]
     public class PostController : Controller
     {
-        private readonly PostContext _context;
+        private readonly ApiContext _context;
 
-        public PostController(PostContext context)
+        public PostController(ApiContext context)
         {
             _context = context;
         }
@@ -27,7 +28,7 @@ namespace backend.Controllers
 
         // GET: api/posts/{id}
         // Pegar post por ID
-        [HttpGet("id")]
+        [HttpGet("{id}")]
         public async Task<ActionResult<Post>> Get(long id)
         {
             var post = await _context.Posts.FindAsync(id);

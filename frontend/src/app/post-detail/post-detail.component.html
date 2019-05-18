@@ -1,21 +1,21 @@
 <div class="container">
-    <div *ngIf="error" class="alert alert-danger text-center">
-      Post com ID {{ route.snapshot.params.id }} não encontrado
-    </div>
-  <div *ngIf="!error">
+  <div *ngIf="error" class="alert alert-danger text-center">
+    Post com ID {{ route.snapshot.params.id }} não encontrado
+  </div>
+  <div *ngIf="post !== undefined">
     <div class="col-8 mx-auto shadow post-detail">
       <div class="text-center">
         <button class="btn btn-primary float-right" disabled>
           Assunto:
           <span class="badge badge-secondary">{{ post.category }}</span>
         </button>
-        <br><br>
+        <br /><br />
         <h1>
           {{ post.title }}
         </h1>
         <p class="text-muted">{{ post.description }}</p>
       </div>
-      <hr>
+      <hr />
       <p id="postContent">
         {{ post.content }}
       </p>
@@ -25,12 +25,33 @@
         </footer>
       </blockquote>
     </div>
-    <div class="col-6 mx-auto mt-3" *ngFor="let comment of comments">
-      <app-comment></app-comment>
+
+    <div
+      *ngIf="comments.length === 0"
+      class="col-8 mx-auto mt-3 alert alert-warning text-center"
+    >
+      Nenhum Comentário até o momento, seja o primeiro a comentar!
     </div>
+
+    <div class="col-8 mx-auto mt-3" *ngIf="comments.length > 0">
+      <div class="card shadow">
+        <div class="card-header">Comentários</div>
+        <div class="card-body">
+          <div class="mt-3" *ngFor="let comment of comments">
+            <app-comment
+              [comment]="comment"
+              [onSave]="updateComments"
+            ></app-comment>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="col-8 mx-auto mt-4">
-      <app-new-comment></app-new-comment>
+      <app-new-comment
+        [postId]="route.snapshot.params.id"
+        [onSave]="updateComments"
+      ></app-new-comment>
     </div>
   </div>
-
 </div>

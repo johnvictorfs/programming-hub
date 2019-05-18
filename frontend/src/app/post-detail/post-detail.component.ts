@@ -12,33 +12,31 @@ import api from "../../api";
 })
 export class PostDetailComponent implements OnInit {
   post: PostDetail;
+  comments: Array<Comment> = [];
 
-  comments: Array<Comment> = [
-    { author: "john", authorId: 1, content: "blah" },
-    { author: "maria", authorId: 2, content: "thing" }
-  ];
+  error: boolean = false;
 
-  error = false;
-
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute) {
+    this.updateComments = this.updateComments.bind(this);
+  }
 
   async ngOnInit() {
     try {
       const { id } = this.route.snapshot.params;
-      const { data } = await api.get(`/posts/${id}`);
-      if (data) {
-        this.post = data;
-      } else {
-        this.error = true;
-      }
+
+      const postResponse = await api.get(`/posts/${id}`);
+      this.post = postResponse.data;
+
+      await this.updateComments();
     } catch (error) {
       this.error = true;
       return;
-    } finally {
-      const { data } = await api.get(`/users/${this.post.authorId}`);
-      if (data) {
-        this.post.author = data.username;
-      }
     }
+  }
+
+  async updateComments() {
+    const { id } = this.route.snapshot.params;
+    const commentsResponse = await api.get(`/comments/post/${id}`);
+    this.comments = commentsResponse.data;
   }
 }

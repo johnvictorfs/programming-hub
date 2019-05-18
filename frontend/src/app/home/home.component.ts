@@ -32,7 +32,6 @@ export class HomeComponent implements OnInit {
   async ngOnInit() {
     try {
       const { data } = await api.get("/posts");
-      console.log(data);
       if (!data.length) {
         this.noPosts = true;
         return;
@@ -48,7 +47,6 @@ export class HomeComponent implements OnInit {
       this.posts[0].active = true;
     } catch (error) {
       this.noPosts = true;
-      console.error(error);
     }
   }
 

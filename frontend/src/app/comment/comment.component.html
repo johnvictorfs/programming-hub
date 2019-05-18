@@ -1,15 +1,47 @@
-<div class="comment">
+<div class="comment shadow">
   <p>
-    Comment Content Here
-    And Here
+    {{ comment.content }}
   </p>
   <blockquote class="blockquote mb-0">
     <footer class="blockquote-footer d-flex">
-      AuthorName
+      {{ comment.authorName }}
       <div class="ml-auto">
-        <button class="btn btn-success btn-sm">Responder</button>
+        <button (click)="toggleAnswer()" class="btn btn-success btn-sm">
+          Responder
+        </button>
       </div>
     </footer>
-
   </blockquote>
+
+  <div *ngFor="let comm of childComments" class="comment shadow mt-3 ml-5">
+    <p>
+      {{ comm.content }}
+    </p>
+    <blockquote class="blockquote mb-0">
+      <footer class="blockquote-footer d-flex">
+        {{ comm.authorName }}
+      </footer>
+    </blockquote>
+  </div>
+
+  <div *ngIf="commentAnswer" class="mt-2">
+    <div class="card">
+      <div class="card-header">
+        Responder Comentário
+      </div>
+      <div class="card-body">
+        <textarea
+          cols="10"
+          rows="4"
+          [(ngModel)]="commentBody"
+          class="form-control"
+        ></textarea>
+      </div>
+      <div class="card-footer text-center">
+        <button class="btn btn-success" (click)="postComment()">
+          Enviar
+        </button>
+      </div>
+    </div>
+  </div>
 </div>
