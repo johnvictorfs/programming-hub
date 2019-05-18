@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {ToastrService} from 'ngx-toastr';
 
 import {Credential} from './model/credential.model';
 
@@ -14,13 +15,20 @@ export class RegisterComponent {
     password2: ''
   };
 
+  constructor(private toastr: ToastrService) {
+  }
+
   submitRegister(): void {
+    if (this.credentials.username === '' || this.credentials.password === '') {
+      this.toastr.error('Você não pode deixar campos em branco.');
+      return;
+    }
     if (this.credentials.password !== this.credentials.password2) {
-      alert('As senhas precisam ser iguais.');
+      this.toastr.error('As senhas precisam ser iguais.');
       return;
     }
 
-    alert(`Cadastro: ${this.credentials.username} - ${this.credentials.password}`);
+    this.toastr.success(`Cadastro: ${this.credentials.username} - ${this.credentials.password}`);
   }
 
 }

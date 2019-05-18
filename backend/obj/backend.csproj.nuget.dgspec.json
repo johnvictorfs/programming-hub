@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/john/WebstormProjects/programming-hub/backend/backend.csproj": {}
+    "/home/john/projects/bootstrap-blog/backend/backend.csproj": {}
   },
   "projects": {
-    "/home/john/WebstormProjects/programming-hub/backend/backend.csproj": {
+    "/home/john/projects/bootstrap-blog/backend/backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/john/WebstormProjects/programming-hub/backend/backend.csproj",
+        "projectUniqueName": "/home/john/projects/bootstrap-blog/backend/backend.csproj",
         "projectName": "backend",
-        "projectPath": "/home/john/WebstormProjects/programming-hub/backend/backend.csproj",
+        "projectPath": "/home/john/projects/bootstrap-blog/backend/backend.csproj",
         "packagesPath": "/home/john/.nuget/packages/",
-        "outputPath": "/home/john/WebstormProjects/programming-hub/backend/obj/",
+        "outputPath": "/home/john/projects/bootstrap-blog/backend/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+          "/home/john/dotnet/sdk/NuGetFallbackFolder"
         ],
         "configFilePaths": [
           "/home/john/.nuget/NuGet/NuGet.Config"

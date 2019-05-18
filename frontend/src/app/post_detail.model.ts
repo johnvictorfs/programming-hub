@@ -1,5 +1,6 @@
 export interface PostDetail {
-  authorId: number;
+  id?: number;
+  authorId?: number;
   title: string;
   content: string;
   description: string;

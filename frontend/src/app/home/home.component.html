@@ -1,44 +1,6 @@
 <div class="row">
   <div class="col-2"></div>
   <div class="col-3">
-    <div class="card mx-auto mb-4 shadow">
-      <div class="card-header text-center">Filtrar Posts por Categoria</div>
-      <div class="card-body">
-        <form accept-charset="utf-8" id="filterCategoryForm">
-          <label *ngFor="let category of categories" class="form-check-inline">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="filter"
-              [value]="null"
-              [(ngModel)]="filterSelection"
-            />
-          </label>
-
-          <label *ngFor="let category of categories" class="form-check-inline">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="filter"
-              [value]="category.value"
-              [(ngModel)]="filterSelection"
-            />
-          </label>
-
-          <hr />
-          <div class="text-center mt-3">
-            <button
-              type="submit"
-              class="btn btn-primary text-white"
-              (click)="filtrarPosts()"
-            >
-              Filtrar
-              <i class="fa fa-filter icon-right"></i>
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
     <div
       class="mx-auto w-50 text-center alert alert-dark shadow posts-label mb-0 pb-1 pt-1"
       role="alert"
@@ -57,6 +19,13 @@
       >
         {{ post.name }}
       </a>
+      <div class="col-8 mx-auto my-2 ml-1">
+        <button class="btn btn-success" [routerLink]="['/posts']"
+                routerLinkActive="router-link-active">
+          <i class="fa fa-list mr-1"></i>
+          Todos Posts
+        </button>
+      </div>
     </div>
   </div>
   <div
@@ -73,7 +42,6 @@
     *ngIf="activePost"
     class="col-5 card shadow bg-light post-preview scale-on-hover ml-5"
   >
-    <!-- <img [src]="activePost.img_src" alt="c-language" class="card-img mt-3" /> -->
     <h2 class="card-title text-center mt-3">{{ activePost.title }}</h2>
     <div class="card-body">
       <div class="card-text">{{ activePost.description }}</div>

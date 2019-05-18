@@ -1,0 +1,97 @@
+<div>
+  <div class="card shadow mb-2">
+    <div class="card-header">
+      <div class="row">
+        <div class="col-10">
+          <button class="btn btn-success btn-sm" [routerLink]="['/post-detail', post.id]" routerLinkActive="router-link-active" >
+            {{ post.title }}
+          </button>
+          <span class="badge badge-secondary ml-2">{{ post.category }}</span>
+        </div>
+        <div class="col-2">
+          <button class="btn btn-primary" (click)="toggleEdit()">
+            <i class="fa fa-edit"></i>
+          </button>
+          <button class="btn btn-danger ml-2" (click)="toggleDelete()">
+            <i class="fa fa-trash"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-body" *ngIf="edit">
+      <div class="form-group">
+        <label for="titleInput">
+          <strong>Título:</strong>
+        </label>
+        <input
+          type="text"
+          name="title"
+          id="titleInput"
+          class="form-control"
+          placeholder="Título"
+          [(ngModel)]="post.title"
+        />
+      </div>
+      <div class="form-group">
+        <label for="descricaoInput">
+          <strong>Descrição:</strong>
+        </label>
+        <input
+          type="text"
+          name="descricao"
+          id="descricaoInput"
+          class="form-control"
+          placeholder="Descrição"
+          [(ngModel)]="post.description"
+        />
+      </div>
+      <div class="form-group">
+        <label for="categoriaInput">
+          <strong>Categoria</strong>
+        </label>
+        <select
+          name="categoria"
+          id="categoriaInput"
+          class="form-control"
+          [(ngModel)]="post.category"
+        >
+          <option selected>Escolha Categoria...</option>
+          <option value="python">Python</option>
+          <option value="nodejs">Node.JS</option>
+          <option value="cpp">C++</option>
+          <option value="c">C</option>
+          <option value="outros">Outros</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="conteudoInput">
+          <strong>Conteúdo:</strong>
+        </label>
+        <textarea
+          name="conteudo"
+          id="conteudoInput"
+          cols="30"
+          rows="10"
+          class="form-control"
+          placeholder="Conteúdo do Post"
+          [(ngModel)]="post.content"
+        ></textarea>
+      </div>
+    </div>
+    <div class="card-footer text-center" *ngIf="edit">
+      <button class="btn btn-success" (click)="updatePost()">
+        Enviar
+      </button>
+    </div>
+
+    <div class="card-body" *ngIf="delete">
+      Tem certeza que deseja deletar esse Post?
+    </div>
+    <div class="card-footer" *ngIf="delete">
+      <button class="btn btn-secondary" (click)="toggleDelete()">Cancelar</button>
+      <button class="btn btn-danger ml-2" (click)="deletePost()">Excluir</button>
+    </div>
+  </div>
+
+</div>

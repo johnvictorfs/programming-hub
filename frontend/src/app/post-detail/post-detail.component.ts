@@ -1,20 +1,20 @@
-import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
-import PostDetail from "./PostDetail";
-import Comment from "../comment/model/comment.model";
-import api from "../../api";
+import PostDetail from './PostDetail';
+import Comment from '../comment/model/comment.model';
+import api from '../../api';
 
 @Component({
-  selector: "app-post-detail",
-  templateUrl: "./post-detail.component.html",
-  styleUrls: ["./post-detail.component.css"]
+  selector: 'app-post-detail',
+  templateUrl: './post-detail.component.html',
+  styleUrls: ['./post-detail.component.css']
 })
 export class PostDetailComponent implements OnInit {
   post: PostDetail;
   comments: Array<Comment> = [];
 
-  error: boolean = false;
+  error = false;
 
   constructor(private route: ActivatedRoute) {
     this.updateComments = this.updateComments.bind(this);
