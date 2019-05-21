@@ -86,7 +86,7 @@ namespace backend.Controllers
             return NoContent();
         }
 
-        // GET: api/posts/{id}/comments
+        // GET: api/comments/post/{id}/comments
         // Pegar todos os comments de um Post por ID
         [HttpGet("post/{id}")]
         public async Task<ActionResult<IEnumerable<Comment>>> GetComments(long id)
@@ -94,7 +94,7 @@ namespace backend.Controllers
             return await _context.Comments.Where(i => i.PostId == id && i.ParentId == 0).ToListAsync();
         }
 
-        // GET api/childs/{id}
+        // GET api/comments/childs/{id}
         // Pegar todos comments filhos de um Comment pai por ID
         [HttpGet("childs/{id}")]
         public async Task<ActionResult<IEnumerable<Comment>>> GetChildComments(long id)
