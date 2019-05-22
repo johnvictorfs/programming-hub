@@ -49,6 +49,8 @@ Blog simples feito para a matéria de Tecnologias de Internet, feito por João V
   - Frontend estará disponível na url http://localhost:4200
   - API estará disponível na url http://localhost:5000
 
+---
+
 #### Funções
 
 - **Post**
@@ -64,6 +66,8 @@ Blog simples feito para a matéria de Tecnologias de Internet, feito por João V
   - Criar Comentário em resposta a outro Comentário - `POST /api/comments/`
   - Ver Comentários em resposta a um Post específico - `GET api/comments/post/:postId/comments`
   - Ver Comentários em resposta a um Comment específico - `GET api/comments/childs/:commentId`
+
+---
 
 #### Imagens
 
