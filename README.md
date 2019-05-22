@@ -1,6 +1,6 @@
 # Programming-hub
 
-Blog simples feito para a matéria de Tecnologias de Internet
+Blog simples feito para a matéria de Tecnologias de Internet, feito por João Victor
 
 ---
 
