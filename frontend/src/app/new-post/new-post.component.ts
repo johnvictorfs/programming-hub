@@ -21,14 +21,10 @@ export class NewPostComponent {
   };
 
   async enviarPost() {
-    const { title, content, description, category } = this.postDetails;
-    if (
-      title === "" ||
-      content === "" ||
-      description === "" ||
-      category === ""
-    ) {
-      return this.toastr.error("Você não pode deixar campos em branco!");
+    for (const key in this.postDetails) {
+      if (!this.postDetails[key]) {
+        return this.toastr.error("Você não pode deixar campos em branco!");
+      }
     }
     try {
       await api.post("/posts", this.postDetails);
